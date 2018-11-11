@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SodoPage } from '../pages/sodo/sodo';
 import { OrderPage } from '../pages/order/order';
+import { PopoverPage } from '../pages/popover/popover';
+import { PopoverOrderTypePage } from '../pages/popover-order-type/popover-order-type';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { OrderPage } from '../pages/order/order';
     HomePage,
     SodoPage,
     OrderPage,
-    
+    PopoverPage,
+    PopoverOrderTypePage,
+
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,8 @@ import { OrderPage } from '../pages/order/order';
     HomePage,
     SodoPage,
     OrderPage,
+    PopoverPage,
+    PopoverOrderTypePage,
 
   ],
   providers: [

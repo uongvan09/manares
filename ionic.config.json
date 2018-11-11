@@ -1,5 +1,8 @@
 {
   "name": "manares",
-  "integrations": {},
-  "type": "ionic-angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "8b01f8e4"
 }
