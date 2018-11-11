@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverOrderTypePage } from '../popover-order-type/popover-order-type';
-import { PopoverSearchPage } from './popover-search';
 
 /**
 
@@ -36,12 +35,7 @@ export class OrderPage {
     });
   }
 
-  presentPopoverSearchPage(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverSearchPage);
-    popover.present({
-      ev: myEvent
-    });
-  }
+  
 
 
   
