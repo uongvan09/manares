@@ -8,9 +8,11 @@ import { OrderPage } from '../order/order';
   templateUrl: 'home.html'
 })
 export class HomePage {
+	sodo: any;
+  	order: any;
 
   constructor(public navCtrl: NavController) {
-    this.sodo = SodoPage;
+    this.sodo  = SodoPage;
     this.order = OrderPage;
   }
 
