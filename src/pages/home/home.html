@@ -1,6 +1,5 @@
-
+<!-- 
 <ion-tabs>
-	<ion-tab tabIcon="easel" tabTitle="Sơ đồ" [root]="sodo"></ion-tab>
 	<ion-tab tabIcon="book" tabTitle="Order" [root]="order"></ion-tab>
 	<ion-tab tabIcon="card" tabTitle="Trả món" [root]="order"></ion-tab>
 	<ion-tab tabIcon="calculator" tabTitle="Tạm tính" [root]="order"></ion-tab>
@@ -8,3 +7,33 @@
 
 </ion-tabs>
 
+ -->
+
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      JSA Note
+    </ion-title>
+ 
+    <ion-buttons end>
+      <button navPush="AddNotePage" ion-button>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+ 
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Notes
+    </ion-list-header>
+ 
+    <ion-item *ngFor="let note of noteList | async" 
+    detail-push navPush="EditNotePage" [navParams]="{note:note}">
+      {{note.title}}
+    </ion-item>
+  </ion-list>
+</ion-content>
