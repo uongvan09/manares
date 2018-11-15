@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 import { PopoverOrderTypePage } from '../popover-order-type/popover-order-type';
+
+
+import 'rxjs/add/operator/map'
+import { Observable } from 'rxjs/Observable';
+import { Order } from '../../model/order/order.model';
+import { OrderListService } from '../../services/order-list.service'
 
 /**
 
@@ -18,7 +25,19 @@ import { PopoverOrderTypePage } from '../popover-order-type/popover-order-type';
 })
 export class OrderPage {
 
-  constructor(public popoverCtrl:PopoverController) {
+  orderList: Observable<Order>
+
+  constructor(public popoverCtrl:PopoverController, public navCtrl: NavController, private orderListService: OrderListService) {
+    this.orderList = this.orderListService.getOrderList()
+    .snapshotChanges()
+    .map(
+    changes => {
+    return changes.map(c => ({
+    key: c.payload.key, ...c.payload.val()
+    }))
+    })
+
+
   }
 
   presentPopoverOrder(myEvent) {
@@ -35,6 +54,7 @@ export class OrderPage {
     });
   }
 
+  
   
 
 

@@ -16,7 +16,6 @@ export class HomePage {
   noteList: Observable<Note[]>
  
   constructor(public navCtrl: NavController, private noteListService: NoteListService) {
-  console.log("kfkd");
     this.noteList = this.noteListService.getNoteList()
     .snapshotChanges()
     .map(

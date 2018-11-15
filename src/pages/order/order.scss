@@ -15,22 +15,36 @@ page-order {
 	}
 	
 	.card-header{
-	background-color:#4d88ff;
+	background-color:#66a3ff;
 	}
 	.card-table {
-	background-color:#f5f5f0
+	background-color:#cce0ff
 	}
 
 	.card-money {
-	background-color: #f0f5f5;
+	background-color: #ffffff;
 	}
 	.card-time {
-	background-color: #e0e0d1;
+	background-color: #ffffff;
 	}
 
 	
 
 	.text-center {
 	text-align: center;
+	}
+
+	.table-footer {
+	background-color: #e5e5cc;
+	}
+
+	.text-color-white{
+		text-color: white;
+	}
+
+	.table-border{
+		border-left: solid #ffffff 1px;
+		border-right: solid #ffffff 1px;   
+
 	}
 }

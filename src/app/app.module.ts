@@ -9,12 +9,14 @@ import { AngularFireDatabaseModule} from "angularfire2/database"
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Home1Page } from '../pages/home1/home1';
 import { LoginPage } from '../pages/login/login';
 import { SodoPage } from '../pages/sodo/sodo';
 import { OrderPage } from '../pages/order/order';
 import { PopoverPage } from '../pages/popover/popover';
 import { PopoverOrderTypePage } from '../pages/popover-order-type/popover-order-type';
 import { NoteListService } from '../services/note-list.service';
+import { OrderListService } from '../services/order-list.service';
 
 var config = {
     apiKey: "AIzaSyCWtIFVEGd3ScuRKRO8AXYtGEX96CpoUmY",
@@ -31,6 +33,7 @@ var config = {
     MyApp,
     LoginPage,
     HomePage,
+    Home1Page,
     SodoPage,
     OrderPage,
     PopoverPage,
@@ -49,6 +52,7 @@ var config = {
     MyApp,
     LoginPage,
     HomePage,
+    Home1Page,
     SodoPage,
     OrderPage,
     PopoverPage,
@@ -62,6 +66,7 @@ var config = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NoteListService,
+    OrderListService
   ]
 })
 export class AppModule {}

@@ -8,7 +8,7 @@
 
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
   	<ion-grid>
-  		<ion-row>
+  		<!-- <ion-row>
   			<ion-col col-2>
   				<button ion-button icon-only (click)="presentPopoverOrder($event)">
   					<ion-icon class = "tool-bar-padding" name="person"></ion-icon>
@@ -22,12 +22,13 @@
   					<ion-icon class = "tool-bar-padding" name="md-arrow-dropdown"></ion-icon>
 				</button>
   			</ion-col>
-  		</ion-row>
+  		</ion-row> -->
+      <p>Order</p>
   	</ion-grid>
   </ion-navbar>
 
 
-  <ion-toolbar>
+  <!-- <ion-toolbar>
     <ion-row style="height: 50px;">
       <ion-col col-4 style="height: 50px;">
       <button ion-button icon-only style="height: 30px;" (click)="presentPopoverSearchPage($event)">
@@ -44,65 +45,55 @@
     </ion-list>
   </ion-col>
 </ion-row>
-       </ion-toolbar>
+
+  </ion-toolbar> -->
 
 </ion-header>
 
 
 <ion-content>
-    <!-- <ion-fab>
+  <ion-searchbar></ion-searchbar>
+    
   
-</ion-fab> -->
+<!-- </ion-fab> -->
   <ion-fab bottom right >
-    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-    <ion-fab-list side="top">
-      <button ion-fab>
-        <ion-icon name="logo-facebook" item-first  color="primary"></ion-icon>
-      </button>
-      <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-vimeo"></ion-icon></button>
-      <button ion-fab><ion-icon name="logo-googleplus"></ion-icon></button>
-    </ion-fab-list>
+    <button ion-fab mini ><ion-icon name="add"></ion-icon></button>
+    
   </ion-fab>
-  <ion-card>
-    <ion-card-header class="card-header">1.1</ion-card-header>
-    <ion-card-content class="no-padding text-center">
+  <div *ngFor = "let order of orderList | async">
+  <ion-card *ngIf = "order.status != 0">
+    <ion-card-header class="card-header text-order-white">{{order.key}}</ion-card-header>
+    <ion-card-content  class="no-padding text-center">
       <ion-row>
         <ion-col col-6 class="card-table no-padding">
-          <ion-label>101</ion-label>
+          <ion-label>{{order.table}}</ion-label>
         </ion-col>
-        <ion-col col-6 class="no-padding ">
+        <ion-col col-6 class="">
           <ion-row class="card-money">
-            <ion-label>500.000</ion-label>
+            <ion-col><p>Giá tiền</p></ion-col>
+            <ion-col><p>{{order.price}}</p></ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="no-padding card-time">
-              <ion-label>55'</ion-label>
+            <ion-col class=" card-time">
+              <p>Thời gian</p>
             </ion-col>
+            <ion-col>{{order.created}}</ion-col>
           </ion-row>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          <button>
-          <ion-icon name="calculator"></ion-icon>
-        </button>
-        </ion-col>
+      <ion-row class="table-footer ">
+        <ion-col class= "table-border" >
+          <ion-icon  name="calculator"></ion-icon>
+        </ion-col>        
         <ion-col >
-          <button>
           <ion-icon name="basket"></ion-icon>
-        </button>
-        </ion-col>
-        <ion-col>
-          <button>
-            <ion-icon name="md-menu"></ion-icon>
-          </button>
-        </ion-col>
-
+        </ion-col> <ion-col class= "table-border">  
+          <ion-icon name="md-menu"></ion-icon>
+        </ion-col>  
       </ion-row>
     </ion-card-content>
   </ion-card>
-  
+  </div>
 
 </ion-content>
 
