@@ -1,7 +1,7 @@
 export interface Order {
 	key?:string;
 	"status": number,
-	"price": float,
+	"price": number,
 	"table": string;
-	"create": datetime;
-}
+	"create": number;
+}    

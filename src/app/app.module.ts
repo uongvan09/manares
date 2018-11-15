@@ -6,17 +6,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AngularFireModule} from 'angularfire2';
 import { AngularFireDatabaseModule} from "angularfire2/database"
 
-
+ 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Home1Page } from '../pages/home1/home1';
 import { LoginPage } from '../pages/login/login';
 import { SodoPage } from '../pages/sodo/sodo';
 import { OrderPage } from '../pages/order/order';
+import { OrderPageModule } from '../pages/order/order.module';
 import { PopoverPage } from '../pages/popover/popover';
 import { PopoverOrderTypePage } from '../pages/popover-order-type/popover-order-type';
+import { CreateOrderPageModule } from '../pages/create-order/create-order.module';
+import { CreateOrderPage } from '../pages/create-order/create-order';
+
 import { NoteListService } from '../services/note-list.service';
 import { OrderListService } from '../services/order-list.service';
+import { TabsService } from '../services/tabs.service'; 
 
 var config = {
     apiKey: "AIzaSyCWtIFVEGd3ScuRKRO8AXYtGEX96CpoUmY",
@@ -35,10 +40,10 @@ var config = {
     HomePage,
     Home1Page,
     SodoPage,
-    OrderPage,
     PopoverPage,
-    PopoverOrderTypePage,
-
+    PopoverOrderTypePage
+    
+ 
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,8 @@ var config = {
     AngularFireModule,
     AngularFireModule.initializeApp(config),
     IonicModule.forRoot(MyApp),
+    CreateOrderPageModule, 
+    OrderPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -53,20 +60,22 @@ var config = {
     LoginPage,
     HomePage,
     Home1Page,
-    SodoPage,
+    SodoPage, 
     OrderPage,
     PopoverPage,
     PopoverOrderTypePage,
+    CreateOrderPage
     
 
 
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NoteListService,
-    OrderListService
+    OrderListService,
+  
   ]
 })
 export class AppModule {}

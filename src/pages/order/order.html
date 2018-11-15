@@ -7,7 +7,6 @@
 <ion-header>
 
   <ion-navbar [color]="isAndroid ? 'royal' : 'primary'">
-  	<ion-grid>
   		<!-- <ion-row>
   			<ion-col col-2>
   				<button ion-button icon-only (click)="presentPopoverOrder($event)">
@@ -23,8 +22,11 @@
 				</button>
   			</ion-col>
   		</ion-row> -->
-      <p>Order</p>
-  	</ion-grid>
+      <ion-row>
+          <button ion-button (click)="openCreateOrderPage()" >
+    <ion-icon item-start name="add"></ion-icon>
+          </button>
+      </ion-row>
   </ion-navbar>
 
 
@@ -56,10 +58,12 @@
     
   
 <!-- </ion-fab> -->
+<!--
   <ion-fab bottom right >
-    <button ion-fab mini ><ion-icon name="add"></ion-icon></button>
+    <button ion-fab mini ><ion-icon name="add" navPush="newOrderPage" ></ion-icon ></button>
     
   </ion-fab>
+-->
   <div *ngFor = "let order of orderList | async">
   <ion-card *ngIf = "order.status != 0">
     <ion-card-header class="card-header text-order-white">{{order.key}}</ion-card-header>
@@ -67,7 +71,7 @@
       <ion-row>
         <ion-col col-6 class="card-table no-padding">
           <ion-label>{{order.table}}</ion-label>
-        </ion-col>
+        </ion-col> 
         <ion-col col-6 class="">
           <ion-row class="card-money">
             <ion-col><p>Giá tiền</p></ion-col>

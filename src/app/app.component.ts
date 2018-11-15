@@ -5,13 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Home1Page } from '../pages/home1/home1';
 import { LoginPage } from '../pages/login/login';
+import { CreateOrderPage } from '../pages/create-order/create-order';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = Home1Page;
-
+ 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

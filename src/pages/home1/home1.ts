@@ -27,5 +27,5 @@ export class Home1Page {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Home1Page');
   }
-
+ 
 }
