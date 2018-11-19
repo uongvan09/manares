@@ -17,15 +17,17 @@ import { OrderListService } from '../../services/order-list.service';
 @IonicPage()
 @Component({
   selector: 'page-create-order',
-  templateUrl: 'create-order.html',
+  templateUrl: 'create-order.html', 
 })
 export class CreateOrderPage {
     productList: Observable<Product>; 
+     numberProduct = 0;
 
   constructor(public navCtrl: NavController,
   public navParams: NavParams,
   private orderListService: OrderListService ) {
-    
+ 
+   
     this.productList = this.orderListService.getProductList()
     .snapshotChanges()
     .map(
@@ -36,6 +38,11 @@ export class CreateOrderPage {
     }))
     });
     
+  }
+  
+  public increaseNumber(){
+  this.numberProduct;
+  
   }
   
   
